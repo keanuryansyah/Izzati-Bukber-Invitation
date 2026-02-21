@@ -187,7 +187,7 @@
                     <div class="timeline-line-base"></div>
                     <div class="timeline-line-progress" id="step-progress"></div>
                     @php
-                    $steps = [['15.00', 'Persiapan'], ['16.00', 'Berbagi Takjil'], ['17.00', 'Dokumentasi'], ['17.30', 'Soft Briefing'], ['18.00', 'Doa Bersama'], ['18.15', 'Bukber']];
+                    $steps = [['15.00', 'Persiapan', 'Sholat Ashar dan Keberangkatan Ke Lokasi Acara'], ['16.00', 'Berbagi Takjil', 'Menebar Kebaikan'], ['17.00', 'Dokumentasi', 'Foto Bersama, Mengabadikan Moment'], ['17.30', 'Soft Briefing', 'Sesi Evaluasi Kerja'], ['18.00', 'Doa Bersama', 'Sebelum Makan'], ['18.15', 'Bukber', 'Makan dan Seru2 an']];
                     @endphp
                     @foreach($steps as $s)
                     <div class="agenda-item">
@@ -195,7 +195,7 @@
                         <div class="agenda-card" data-aos="fade-up"> <!-- Diubah ke fade-up -->
                             <span class="text-[9px] font-black text-[#d98604] uppercase tracking-widest mb-1 block italic">{{ $s[0] }} WIB</span>
                             <h4 class="text-xl font-black mb-1 leading-none text-[#00263e]">{{ $s[1] }}</h4>
-                            <p class="text-[11px] text-gray-400 font-bold leading-relaxed italic">Agenda penting keluarga Izzatishot.</p>
+                            <p class="text-[11px] text-gray-400 font-bold leading-relaxed italic">{{ $s[2] }}</p>
                         </div>
                     </div>
                     @endforeach
