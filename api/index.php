@@ -1,14 +1,12 @@
 <?php
 
-// Mengarahkan Vercel agar menganggap folder root sebagai pangkalan
-$root = __DIR__ . '/../';
+// Jalankan autoload dari folder root
+require __DIR__ . '/../vendor/autoload.php';
 
-// Memanggil autoload langsung dari root
-require $root . 'vendor/autoload.php';
+// Inisialisasi Aplikasi Laravel
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
-// Menjalankan aplikasi Laravel
-$app = require_once $root . 'bootstrap/app.php';
-
+// Handle Request
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
