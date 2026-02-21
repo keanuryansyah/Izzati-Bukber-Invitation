@@ -1,12 +1,18 @@
 <?php
 
-// Jalankan autoload dari folder root
+// 1. Arahkan folder penyimpanan ke /tmp agar tidak Error 500
+// (Vercel hanya mengizinkan penulisan di folder /tmp)
+putenv('VIEW_COMPILED_PATH=/tmp');
+putenv('SESSION_DRIVER=cookie');
+putenv('LOG_CHANNEL=stderr');
+
+// 2. Jalankan Autoload
 require __DIR__ . '/../vendor/autoload.php';
 
-// Inisialisasi Aplikasi Laravel
+// 3. Inisialisasi Aplikasi Laravel
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-// Handle Request
+// 4. Jalankan Kernel
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
